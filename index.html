@@ -13,7 +13,7 @@
         
         body {
             font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #1a1a1a; /* Темный фон вместо градиента */
             min-height: 100vh;
             padding: 20px;
             color: #333;
@@ -27,119 +27,183 @@
         
         .invitation-card {
             background: white;
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-radius: 10px; /* Меньше скругление для строгого вида */
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
             margin-bottom: 20px;
             text-align: center;
+            border: 1px solid #ddd;
         }
         
         .header {
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
         
         .header h1 {
-            font-size: 2.5em;
-            color: #ff6b6b;
+            font-size: 2.2em;
+            color: #000; /* Черный вместо красного */
             margin-bottom: 10px;
+            font-weight: bold;
         }
         
         .emoji {
-            font-size: 4em;
-            margin-bottom: 20px;
+            font-size: 3em;
+            margin-bottom: 15px;
+            filter: grayscale(100%); /* Черно-белые эмодзи */
+        }
+        
+        /* СТИЛИ ДЛЯ ПОСТЕРА */
+        .poster-section {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        
+        .poster-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px; /* Минимальное скругление */
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            border: 2px solid #000; /* Черная рамка */
+            transition: transform 0.3s ease;
+            filter: grayscale(100%); /* Черно-белый постер */
+        }
+        
+        .poster-image:hover {
+            transform: scale(1.01);
         }
         
         .details {
-            background: #f8f9fa;
-            padding: 25px;
-            border-radius: 15px;
-            margin-bottom: 30px;
+            background: #f5f5f5; /* Светло-серый фон */
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 25px;
             text-align: left;
+            border: 1px solid #ddd;
         }
         
         .details h2 {
-            color: #495057;
+            color: #000; /* Черный */
             margin-bottom: 15px;
-            border-bottom: 2px solid #ff6b6b;
-            padding-bottom: 10px;
+            border-bottom: 2px solid #000; /* Черная линия */
+            padding-bottom: 8px;
             text-align: center;
+            font-weight: bold;
         }
         
         .detail-item {
-            margin: 15px 0;
+            margin: 12px 0;
             font-size: 1.1em;
+            color: #333; /* Темно-серый текст */
         }
         
         .detail-item strong {
-            color: #ff6b6b;
+            color: #000; /* Черный для выделения */
+            font-weight: bold;
         }
         
         .actions {
             display: flex;
             flex-direction: column;
-            gap: 15px;
-            margin: 30px 0;
+            gap: 12px;
+            margin: 25px 0;
         }
         
         .btn {
             display: inline-block;
-            padding: 15px 30px;
-            border-radius: 50px;
-            font-size: 18px;
+            padding: 12px 25px;
+            border-radius: 5px; /* Прямые углы */
+            font-size: 16px;
             font-weight: bold;
             text-decoration: none;
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: all 0.3s;
             text-align: center;
+            border: 2px solid #000; /* Черная рамка */
         }
         
         .btn-primary {
-            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+            background: #000; /* Черный фон */
             color: white;
         }
         
         .btn-secondary {
-            background: #6c757d;
-            color: white;
+            background: white;
+            color: #000; /* Черный текст */
         }
         
         .btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+        }
+        
+        .btn-primary:hover {
+            background: #333; /* Темно-серый при наведении */
+        }
+        
+        .btn-secondary:hover {
+            background: #f5f5f5;
         }
         
         .instructions {
-            background: #e9ecef;
-            padding: 20px;
-            border-radius: 10px;
+            background: #f5f5f5;
+            padding: 18px;
+            border-radius: 5px;
             margin-top: 20px;
             text-align: left;
+            border: 1px solid #ddd;
         }
         
         .instructions h3 {
-            color: #495057;
+            color: #000;
             margin-bottom: 10px;
+            font-weight: bold;
         }
         
         .instructions ol {
             margin-left: 20px;
+            color: #333;
         }
         
         .instructions li {
-            margin: 8px 0;
+            margin: 6px 0;
         }
 
+        /* Адаптивность */
         @media (max-width: 600px) {
             .invitation-card {
                 padding: 20px;
             }
             
             .header h1 {
-                font-size: 2em;
+                font-size: 1.8em;
             }
             
             .emoji {
-                font-size: 3em;
+                font-size: 2.5em;
             }
+            
+            .actions {
+                flex-direction: column;
+            }
+            
+            .btn {
+                padding: 10px 20px;
+                font-size: 15px;
+            }
+        }
+
+        /* Дополнительные черно-белые элементы */
+        .count-badge {
+            background: #000;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 3px;
+            font-size: 0.8em;
+            margin-left: 8px;
+        }
+
+        /* Убираем все цветные тени */
+        * {
+            --shadow-color: rgba(0,0,0,0.1);
         }
     </style>
 </head>
@@ -149,6 +213,11 @@
             <div class="header">
                 <div class="emoji">🎂🎉🥳</div>
                 <h1>Приглашение на День Рождения!</h1>
+            </div>
+            
+            <!-- ПОСТЕР -->
+            <div class="poster-section">
+                <img src="poster.jpg" alt="Постер дня рождения" class="poster-image">
             </div>
             
             <div class="details">
@@ -163,16 +232,16 @@
                     <strong>🎁 Что будет:</strong> Вечеринка, угощения, музыка и много веселья!
                 </div>
                 <div class="detail-item">
-                    <strong>👔 Дресс-код:</strong> Повседневный/Праздничный
+                    <strong>👔 Дресс-код:</strong> Черно-белый / Элегантный
                 </div>
             </div>
 
             <div class="actions">
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLScVGNNLC-T18eROHItnPV2WD_qQghx_93uHg3Iwuzc6eOp5hA/viewform?usp=dialog" class="btn btn-primary" target="_blank">
+                <a href=https://docs.google.com/forms/d/e/1FAIpQLScVGNNLC-T18eROHItnPV2WD_qQghx_93uHg3Iwuzc6eOp5hA/viewform?usp=dialog" class="btn btn-primary" target="_blank">
                     📝 Ответить на приглашение
                 </a>
                 
-                <a href="https://docs.google.com/spreadsheets/d/19Z8XDnM-w_saav_vEoGLretbBfJbvVzrUkPhgiky9WA/edit?usp=sharing" class="btn btn-secondary" target="_blank">
+                <a href="https://docs.google.com/spreadsheets/d/19Z8XDnM-w_saav_vEoGLretbBfJbvVzrUkPhgiky9WA/edit?usp=sharing" target="_blank">
                     👀 Посмотреть кто уже идет
                 </a>
             </div>
@@ -195,13 +264,21 @@
             const buttons = document.querySelectorAll('.btn');
             buttons.forEach(btn => {
                 btn.addEventListener('mouseenter', function() {
-                    this.style.transform = 'translateY(-3px)';
+                    this.style.transform = 'translateY(-2px)';
                 });
                 
                 btn.addEventListener('mouseleave', function() {
                     this.style.transform = 'translateY(0)';
                 });
             });
+
+            // Добавляем эффект для изображения
+            const poster = document.querySelector('.poster-image');
+            if (poster) {
+                poster.addEventListener('load', function() {
+                    console.log('Постер загружен в черно-белом стиле');
+                });
+            }
         });
     </script>
 </body>
